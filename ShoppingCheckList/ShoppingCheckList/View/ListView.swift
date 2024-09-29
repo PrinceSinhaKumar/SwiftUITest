@@ -9,10 +9,26 @@ import SwiftUI
 
 struct ListView: View {
     @Binding var selectedProductsCount: Int
+    @Binding var totalProductsCount: Int
     let feedResults: [FeedResults]
     
     var body: some View {
         List {
+            Section {} header: {
+                VStack(alignment: .leading, spacing: 35) {
+                    HStack {
+                        Spacer()
+                        CircularDottedBarView(progress: CGFloat(selectedProductsCount) / CGFloat(totalProductsCount), frameWidth: 95, frameHeight: 95)
+                        Spacer()
+                    }
+                    SelectableItemsView()
+
+                }
+                .listRowInsets(EdgeInsets())
+                .padding(.top, 30)
+                .padding(.bottom, 27)
+            }
+            
             ForEach(feedResults, id: \.id) { result in
                 if let category = result.artifact?.slideShow?.slides, !category.isEmpty {
                     let rowData = category.filter({$0.retailers?.count ?? 0 > 0})
