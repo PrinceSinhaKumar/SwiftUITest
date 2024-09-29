@@ -62,6 +62,7 @@ struct Slides: Codable {
     let imageUrl: String?
     let imageAltText: String?
     let photoCredit: String?
+    var isSelected: Bool?
     let retailers: [Retailers]?
 }
 

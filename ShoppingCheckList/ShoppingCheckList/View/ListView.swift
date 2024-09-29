@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct ListView: View {
+    @Binding var selectedProductsCount: Int
     let feedResults: [FeedResults]
+    
     var body: some View {
         List {
             ForEach(feedResults, id: \.id) { result in
@@ -16,13 +18,11 @@ struct ListView: View {
                     let rowData = category.filter({$0.retailers?.count ?? 0 > 0})
                     Section {
                         rowView(category: rowData)
-                    }
-                    header: {
+                    } header: {
                         if !rowData.isEmpty {
                             headerView(result: result)
                         }
-                    }
-                    footer: {
+                    } footer: {
                         if category.last?.retailers?.isEmpty ?? false {
                             VStack(spacing: 25) {
                                 footerView(rowData: rowData)
@@ -41,9 +41,29 @@ struct ListView: View {
         .listStyle(.grouped)
         .scrollIndicators(.hidden)
     }
+    
 }
-
 extension ListView {
+    fileprivate func rowView(category: [Slides]) -> ForEach<Range<Array<Slides>.Index>, Array<Slides>.Index, some View> {
+        return ForEach(category.indices, id: \.self) { index in
+            let result = category[index]
+            VStack {
+                ProductRow(selectedCount: $selectedProductsCount, products: result) // Pass the binding
+                    .padding()
+                    .frame(height: 25)
+                    .padding([.top])
+            }
+            .listRowSpacing(0)
+            .listRowSeparator(.hidden)
+            .listSectionSeparator(.hidden)
+            .background(.white)
+            .padding(.bottom, index == category.count - 1 ? 20 : 0)
+            .listRowBackground(
+                Color.white.cornerRadius(index == category.count - 1 ? 10 : 0)
+            )
+        }
+    }
+    
     fileprivate func headerView(result: FeedResults) -> some View {
         return VStack(alignment: .leading) {
             Text(result.tags?.first?.capitalized ?? "")
@@ -59,27 +79,6 @@ extension ListView {
         )
     }
     
-    fileprivate func rowView(category: [Slides]) -> ForEach<Range<Array<Slides>.Index>, Array<Slides>.Index, some View> {
-        return ForEach(category.indices, id: \.self) { index in
-            let result = category[index]
-            VStack {
-                ProductRow(products: result)
-                    .padding()
-                    .frame(height: 25)
-                    .padding([.top])
-            }
-            .listRowSpacing(0)
-            .listRowSeparator(.hidden)
-            .listSectionSeparator(.hidden)
-            .background(.white)
-            .padding(.bottom, index == category.count - 1 ? 20 : 0)
-            .listRowBackground(
-                Color.white.cornerRadius(index == category.count - 1 ? 10 : 0)
-            )
-            
-        }
-    }
-    
     fileprivate func footerView(rowData: [Slides]) -> some View {
         return PlaceHolderView(text: "320x50 Ad placeholder")
             .frame(height: rowData.isEmpty ? 250 : 50)
@@ -88,6 +87,5 @@ extension ListView {
             .padding(.horizontal)
             .padding(.top, 25)
             .foregroundStyle(.black)
-        
     }
 }

@@ -13,7 +13,6 @@ struct CircularDottedBarView: View {
     var frameHeight: CGFloat = 100
     
     var body: some View {
-        
         ZStack {
             ForEach(0..<totalSegments, id: \.self) { index in
                 SegmentShape(index: index, totalSegments: totalSegments)
@@ -31,7 +30,6 @@ struct CircularDottedBarView: View {
                             .font(.system(size: 16, weight: .bold))
                         Text("Complete")
                             .font(.system(size: 12, weight: .regular))
-                        
                     }
                     .foregroundColor(.black)
                 }

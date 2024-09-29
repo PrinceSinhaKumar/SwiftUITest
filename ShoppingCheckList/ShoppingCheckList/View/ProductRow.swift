@@ -7,6 +7,8 @@
 import SwiftUI
 
 struct ProductRow: View {
+    
+    @Binding var selectedCount: Int
     @State var isChecked: Bool = false
     let products: Slides
     
@@ -21,6 +23,12 @@ struct ProductRow: View {
                 .clipShape(RoundedRectangle(cornerRadius: 4))
                 .onTapGesture {
                     self.isChecked.toggle()
+                    // Update selected count based on selection state
+                    if self.isChecked {
+                        selectedCount += 1
+                    } else {
+                        selectedCount -= 1
+                    }
                 }
             
             Text(products.headline ?? "")
@@ -32,7 +40,7 @@ struct ProductRow: View {
             Text("Shop Now")
                 .underline(color: .appUnderline)
                 .onTapGesture {
-                    
+                    // Action for "Shop Now"
                 }
         }
     }
