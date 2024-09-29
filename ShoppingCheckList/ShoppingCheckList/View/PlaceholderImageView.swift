@@ -35,12 +35,12 @@ struct SelectableItemsView: View {
                     }
                     .padding()
                     .frame(height: 30)
-                    .background(selectedItem == item ? .app2NdSkyBlue : .white)
-                    .cornerRadius(15)
-                    .overlay(
+                    .background(content: {
                         RoundedRectangle(cornerRadius: 15)
+                            .fill(selectedItem == item ? .app2NdSkyBlue : .white)
                             .stroke((selectedItem == item ? .white : .appBlue), lineWidth: 1)
-                    )
+                    })
+                    .cornerRadius(15)
                 }
             }
         }

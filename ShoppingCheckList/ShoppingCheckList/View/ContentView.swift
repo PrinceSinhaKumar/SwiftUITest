@@ -30,7 +30,7 @@ struct ContentView: View {
                             VStack(alignment: .leading, spacing: 20) {
                                 SelectableItemsView()
                                 ListView(feedResults: feedResults)
-                                    .frame(width: g.size.width - 30, height: g.size.height, alignment: .center)
+                                    .frame(width: g.size.width - 30, height: g.frame(in: .global).size.height, alignment: .center)
                             }
                             .padding(.horizontal, 15)
                             Spacer()

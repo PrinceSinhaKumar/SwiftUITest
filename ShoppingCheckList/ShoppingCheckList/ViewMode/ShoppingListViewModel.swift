@@ -13,7 +13,6 @@ class ShoppingListViewModel: ObservableObject {
     @Published var shoppingList: ShoppingList?
     @Published var error: ErrorHandler?
     var cancellables = Set<AnyCancellable>()
-    @Published var selectedProduct: Set<Int>?
     
     let model: ShppingListModel
     init(model: ShppingListModel) {
