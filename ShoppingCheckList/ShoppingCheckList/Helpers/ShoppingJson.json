@@ -37,7 +37,6 @@
                                     "imageUrl": "https://www.sample.com/",
                                     "imageAltText": "",
                                     "photoCredit": "",
-                                    "isSelected": false,
                                     "retailers": [
                                         {
                                             "productId": "",
@@ -54,7 +53,6 @@
                                     "imageUrl": "https://www.sample.com/",
                                     "imageAltText": "",
                                     "photoCredit": "",
-                                    "isSelected": false,
                                     "retailers": [
                                         {
                                             "productId": "",
@@ -71,7 +69,6 @@
                                     "imageUrl": "https://www.sample.com/",
                                     "imageAltText": "",
                                     "photoCredit": "",
-                                    "isSelected": false,
                                     "retailers": [
                                         {
                                             "productId": "",
@@ -88,7 +85,6 @@
                                     "imageUrl": "https://www.sample.com/",
                                     "imageAltText": "",
                                     "photoCredit": "",
-                                    "isSelected": false,
                                     "retailers": [
                                         {
                                             "productId": "",
@@ -105,7 +101,6 @@
                                     "imageUrl": "https://www.sample.com/",
                                     "imageAltText": "",
                                     "photoCredit": "",
-                                    "isSelected": false,
                                     "retailers": [
                                         {
                                             "productId": "",
@@ -122,7 +117,6 @@
                                     "imageUrl": "https://www.sample.com/",
                                     "imageAltText": "",
                                     "photoCredit": "",
-                                    "isSelected": false,
                                     "retailers": [
                                         
                                     ]
@@ -165,7 +159,6 @@
                                     "imageUrl": "/ims/2024/03/Chilling-Home-Pregnancy-Pillow_4x3.jpg",
                                     "imageAltText": "Pregnancy Pillow",
                                     "photoCredit": "xyz",
-                                    "isSelected": false,
                                     "retailers": [
                                         {
                                             "productId": "",
@@ -182,7 +175,6 @@
                                     "imageUrl": "/ims/2024/03/Bio-Oil-Skincare-Oil-xyz_4x3.jpg",
                                     "imageAltText": "Bio-Oil Skincare Oil",
                                     "photoCredit": "xyz",
-                                    "isSelected": false,
                                     "retailers": [
                                         {
                                             "productId": "",
@@ -199,7 +191,6 @@
                                     "imageUrl": "/ims/2024/03/HoFish-Maternity-Bras_4x3.jpg",
                                     "imageAltText": "Maternity Bras",
                                     "photoCredit": "xyz",
-                                    "isSelected": false,
                                     "retailers": [
                                         {
                                             "productId": "",
@@ -216,7 +207,6 @@
                                     "imageUrl": "/ims/2024/03/amiyoyo-maternity-leggings-xyz_4x3.jpg",
                                     "imageAltText": "Maternity Leggings",
                                     "photoCredit": "xyz",
-                                    "isSelected": false,
                                     "retailers": [
                                         {
                                             "productId": "",
@@ -233,7 +223,6 @@
                                     "imageUrl": "/ims/2024/03/Goppus-Stainless-Steel-Water-Bottle-xyz_4x3.jpg",
                                     "imageAltText": "Stainless Steel Water Bottle",
                                     "photoCredit": "xyz",
-                                    "isSelected": false,
                                     "retailers": [
                                         {
                                             "productId": "",
@@ -280,7 +269,6 @@
                                     "imageUrl": "https://www.sample.com/",
                                     "imageAltText": "",
                                     "photoCredit": "https://www.sample.com/article-url-from-photo-credit",
-                                    "isSelected": false,
                                     "retailers": [
                                         
                                     ]

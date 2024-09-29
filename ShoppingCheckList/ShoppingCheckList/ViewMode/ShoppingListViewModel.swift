@@ -35,8 +35,7 @@ class ShoppingListViewModel: ObservableObject {
             }, receiveValue: { [weak self] listData in
                 self?.shoppingList = listData
                 
-                // Assuming you have a way to determine the total number of products
-                self?.totalProductsCount = listData.shoppingData?.contentFeed?.feedResults?.reduce(0, { $0 + ($1.artifact?.slideShow?.slides?.count ?? 0) }) ?? 0
+                self?.totalProductsCount = listData.shoppingData?.contentFeed?.feedResults?.reduce(0, { $0 + ($1.artifact?.slideShow?.slides?.filter({$0.retailers?.count ?? 0 > 0}).count ?? 0) }) ?? 0
             })
             .store(in: &cancellables)
     }
